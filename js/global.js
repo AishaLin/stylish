@@ -16,6 +16,7 @@ productType.forEach(el=> {
   el.addEventListener('click', getTypeData)
 })
 function getTypeData(el) {
+  window.location.pathname = `/index.html`
   init()
   let typeName = el.target.dataset.linkname //自定義data-*屬性的標的物件
   let url = `${urlRoot}/${typeName}`
@@ -90,7 +91,7 @@ function render(data) {
     let productItem = document.createElement('a')
     productItem.className = 'productItem'
     productItem.setAttribute('data-id', `${el.id}`) //產品id
-    productItem.setAttribute('href', `/pages/product.html?id=${el.id}`) //產品id
+    productItem.setAttribute('href', `/product.html?id=${el.id}`) //產品id
     //產品圖區
     let frame_pic = document.createElement('div')
     frame_pic.className = 'frame_pic'

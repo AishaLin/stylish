@@ -3,7 +3,7 @@ Banner
 ==================================== */
 .banner {
   width: auto;
-  height: 185px;
+  height: 235px;
   background-color: #bdb6b0;
 }
 #imgWrap {
@@ -38,7 +38,7 @@ Banner
   /* align-self: flex-end; */
   margin: 10px auto;
   position: relative;
-  top: 55px;
+  top: 105px;
 }
 .dot {
   width: 10px;
@@ -167,6 +167,7 @@ main {
 
 @media (min-width: 501px) {
   main {
+    margin-top: 50px;
 		width: 90%;
 	}
 }

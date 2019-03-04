@@ -8,12 +8,17 @@ html {
   height: 100%;
 }
 body {
-  min-height: 100%;
+	min-height: 100%;
+	position: relative;
   display: flex;
   flex-direction: column;
 	margin: 0;
 }
-
+footer {
+	width: 100vw;
+	position: absolute;
+	bottom: 0;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -527,7 +532,7 @@ small {
 	/* ===================== */
 
 	.productItem {
-		height: 36.5vw;
+		height: 31.7vw;
 		width: 28%;
 		margin: 20px;
 	}

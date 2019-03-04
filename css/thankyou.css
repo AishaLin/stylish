@@ -1,15 +1,6 @@
 main {
     text-align: center;
 }
-body {
-    min-height: 100%;
-    position: relative;
-}
-footer {
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-}
 .orderComplete {
     margin-top: 5px;
 }
