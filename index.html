@@ -72,17 +72,9 @@
 				</a>
 			</div>
 			<div class="footbar2">
-				<a href="#"><img class="mobile_member_icon" src="img/member-mobile.png" alt="mobile_member_icon"><span  class="footbartext">會員</span></a>
+				<a href="#"><img class="mobile_member_icon" src="img/member-mobile.png" alt="mobile_member_icon" onlogin="checkLoginState()" ><span  class="footbartext">會員</span></a>
 			</div>
 		</div>
-
-
-		<div id="fb-root"></div>
-		<script async defer src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=2072629076292893&autoLogAppEvents=1"></script>
-		<div class="fb-login-button" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
-
-
-
 <!-- Footer -->
 		<footer class="mainFooter">
 			<div class="footer-navicon">
@@ -103,8 +95,10 @@
 		</footer>
 
 		<script src="js/global.js"></script> <!--連結主內容物api, 搜索, 自動加載-->
-		<script src="js/home.js"></script> <!--主頁及Banner欄位圖片動畫-->
-		<script src="js/fblogin.js"></script> <!--主頁及Banner欄位圖片動畫-->
+		<script src="js/home.js"></script> 
+		<script async defer src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=2072629076292893&autoLogAppEvents=1"></script>
+		<script src="js/fblogin.js"></script>
+
 	</body>
 </html>
 
