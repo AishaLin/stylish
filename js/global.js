@@ -17,7 +17,7 @@ mainLogo.addEventListener('click',goToHomePage)
 
 //從他頁回到首頁
 function goToHomePage() {
-  window.location.pathname = `/index.html`
+  window.location.pathname = `index.html`
 }
 
 
@@ -102,7 +102,7 @@ function render(data) {
     let productItem = document.createElement('a')
     productItem.className = 'productItem'
     productItem.setAttribute('data-id', `${el.id}`) //產品id
-    productItem.setAttribute('href', `/product.html?id=${el.id}`) //產品id
+    productItem.setAttribute('href', `product.html?id=${el.id}`) //產品id
     //產品圖區
     let frame_pic = document.createElement('div')
     frame_pic.className = 'frame_pic'

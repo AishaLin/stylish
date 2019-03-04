@@ -48,11 +48,11 @@ function renderCartList(arrayJason) {
         let cart_product_Img_Frame = document.createElement('a')
         cart_product_Img_Frame.className = 'cart_product_Img_Frame'
         cart_product_Img_Frame.setAttribute('data-id', `${el.id}`) //產品id
-        cart_product_Img_Frame.setAttribute('href', `/product.html?id=${el.id}`)
+        cart_product_Img_Frame.setAttribute('href', `product.html?id=${el.id}`)
         let cart_product_Img = document.createElement('img')
         cart_product_Img.className = 'cart_product_Img'
         cart_product_Img.setAttribute('src', `${el.img}`)
-        cart_product_Img_Frame.setAttribute('href', `/product.html?id=${el.id}`)
+        cart_product_Img_Frame.setAttribute('href', `product.html?id=${el.id}`)
 
         let cart_product_Description = document.createElement('article')
         cart_product_Description.className = 'cart_product_Description'
