@@ -1,0 +1,28 @@
+main {
+    text-align: center;
+}
+body {
+    min-height: 100%;
+    position: relative;
+}
+footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}
+.orderComplete {
+    margin-top: 5px;
+}
+.orderConfirmed {
+    max-width: 65px;
+    width: 10%;
+    height: auto;
+    margin-top: 5vw;
+}
+.orderComplete {
+    line-height: 1;
+    font-family: NotoSansCJKtc;
+  	font-size: 0.8em;
+    letter-spacing: 2.4px;
+  	color: #3f3a3a;
+}

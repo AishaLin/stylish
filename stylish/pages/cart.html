@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>Stylish</title>
+		<link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/cart.css">
+        <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
+	</head>
+
+	<body>
+<!-- Header -->
+		<header>
+			<div class="mainhead">
+				<div class="frame_logo">
+					<img src="../img/btn-logo-01.png" class="btn_logo01" alt="stylish logo">
+				</div>
+				<!--網頁版產品列-->
+				<ul class="main-nav">
+					<li><a class="productType" data-linkname="women">女裝</a></li>
+					<li class="saparation productType"><a data-linkname="men">男裝</a></li>
+					<li><a class="productType" data-linkname="accessories">配件</a></li>
+				</ul>
+				<div class="headicon">
+					<div class="searchbar">
+						<input type="text" class="webSearchInput searchInput">
+						<a><img class="btn_search pureSearch searchBtn" src="../img/search.png" alt="search icon"></a><!--網頁版搜尋鈕-->
+						<a><img class="btn_search openSearchBar" src="../img/search.png" alt="search icon"></a><!--手機版搜尋鈕開啟蒐索列-->
+					</div>
+                    <a href="/pages/cart.html" class="cartArea"><img class="btn_web_shopping-cart01" src="../img/cart.png" alt="cart icon">
+						<span class="cart_counter countValue">0</span>
+					</a>
+					<a href="#"><img class="btn_member01" src="../img/member.png" alt="member icon"></a>
+				</div>
+			</div>
+			<!--手機版搜尋列-->
+			<div class="mobileSearchBar">
+				<input type="text" class="moSearchInput searchInput">
+				<input type="button" class="searchBtn searchText" value="搜尋">
+				<button class="close-btn">&times;</button>
+			</div>
+			<!--手機版產品列-->
+			<nav class="headline">
+				<div class="mobile-main-nav">
+					<a class="productType" data-linkname="women">女裝</a>
+				</div>
+				<div class="mobile-main-nav saparation">
+					<a class="productType" data-linkname="men">男裝</a>
+				</div>
+				<div class="mobile-main-nav">
+					<a class="productType" data-linkname="accessories">配件</a>
+				</div>
+			</nav>
+		</header>
+<!-- Content -->
+		<main class="Cart_Page">
+            <div class="locationPage"><a>HOME</a><span> > </span><a>BAG</a></div>
+            <div class="Head_And_SubHead">
+                <div class="cartHead">
+                    <span>購物車(</span><span class="countValue">0</span><span>)</span>  
+                </div>
+                <div class="SubHeader_Web">
+                    <span>數量</span>
+                    <span>單價</span>
+                    <span>小計</span>
+                </div>
+                <div class="space"></div>
+            </div>
+            <hr align="center" width="100%">          
+			<section class="cart_product_Information">
+                <div class="cart_product_Information_PerItem">
+                    <div class="ImgAndDescription">
+                        <a class="cart_product_Img_Frame">
+                            <img class="cart_product_Img">
+                        </a>
+                        <article class="cart_product_Description">
+                            <h2>前開衩扭結洋裝</h2>
+                            <p class="cart_productID">03040047</p>
+                            <p>顏色｜白</p>
+                            <p>尺寸｜M</p>
+                        </article>
+                    </div>
+                    <div class="cart_PiecesAndPrice_PerItem">
+                        <div class="Frame_SubHeader_Mobile">
+                            <p class="SubHeader_Mobile">數量</p>
+                            <form class="Form_PiecesAndPrice_PerItem">
+                                <select class="Pieces_PerItem" name="Pieces_PerItem">
+                                    <option class="pieces_PerItem" >1</option>
+                                    <option class="pieces_PerItem" >2</option>
+                                    <option class="pieces_PerItem" >3</option>
+                                </select>
+                            </form>
+                        </div> 
+                        <div class="Frame_SubHeader_Mobile">
+                            <p class="SubHeader_Mobile">單價</p>
+                            <p class="price_PerPieces">NT. 590</p>
+                        </div>
+                        <div class="Frame_SubHeader_Mobile">
+                            <p class="SubHeader_Mobile">小計</p>
+                            <p class="price_PerItem">NT. 1180</p>
+                        </div>
+                        <div class="space2"></div>
+                    </div>
+                    <div class="cart-remove"><img class="cartRemoveImg" src="../img/cart-remove.png" alt="cart-remove"></div>
+                </div>
+                <hr align="center" width="100%">
+			</section>
+			<section class="DistributionCountry_and_PaymentMethod">
+				<div class="DistributionCountry">
+                    <p>配送國家</p>
+                    <form class="countryAndPayment">
+                        <select class="select_Country" name="select_DistributionCountry">
+                            <option class="SPOption" value="台灣及離島">台灣及離島</option>
+                            <option class="SPOption" value="海外國家">海外國家</option>
+                        </select>
+                    </form>
+				</div>
+				<div class="PaymentMethod">
+                    <p>付款方式</p>
+                    <form class="countryAndPayment">
+                        <select class="select_Payment" name="select_PaymentMethod">
+                            <option class="SPOption" value="宅配信用卡付款">宅配信用卡付款</option>
+                            <option class="SPOption" value="宅配貨到付款">宅配貨到付款</option>
+                            <option class="SPOption" value="超商取貨付款">超商取貨付款</option>
+                        </select>
+                    </form>
+                </div>
+            </section>
+            <div class="credit_card_info">
+                <p class="order_title">請填寫信用卡資訊</p>
+                <div>
+                    <p>信用卡卡號</p>
+                    <div class="tpfield" id="card-number"></div>
+                </div>
+                <div>
+                    <p>卡片到期日</p>
+                    <div class="tpfield" id="card-expiration-date"></div>
+                </div>
+                <div>
+                    <p>卡片安全碼</p>
+                    <div class="tpfield" id="card-ccv"></div>
+                </div>
+            </div>
+            <section class="Remind">
+                <h6>※ 提醒您： </h6>
+                <p>• 選擇宅配-請填寫正確收件人資訊，避免包裹配送不達</p>
+                <p>• 選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取</p>
+            </section>
+            <section class="Ordering_Information" id="necessary_information">
+                    <h3>訂購資料</h3>
+                    <hr align="center" width="100%">
+                    <div>
+                        <label for="consumer_Name" class="Ordering_Inf">收件人姓名</label>
+                        <div>
+                            <input id="consumer_Name" class="Ordering_Input necessary_information" type="text">
+                            <span class="remindText">務必填寫完整收件人姓名，避免包裹無法順利簽收</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="Ordering_Inf">e-mail</label>
+                        <input id="email" class="Ordering_Input necessary_information" type="text">
+                    </div>
+                    <div>
+                        <label for="tel" class="Ordering_Inf">手機</label>
+                        <input id="tel" class="Ordering_Input necessary_information" type="text">
+                    </div>
+                    <div>
+                        <label for="address" class="Ordering_Inf">地址</label>
+                        <input id="address" class="Ordering_Input necessary_information" type="text">
+                    </div>
+                    <div>
+                        <div class="Ordering_Inf">配送時間</div>
+                        <div class="shippingTime">
+                            <div class="shipping" ><input class="shippingTime_checked" type="radio" name="DeliverTime" value="08:00-12:00">08:00-12:00</div>
+                            <div class="shipping" ><input class="shippingTime_checked" type="radio" name="DeliverTime" value="14:00-18:00">14:00-18:00</div>
+                            <div class="shipping" ><input class="shippingTime_checked" type="radio" name="DeliverTime" value="不指定">不指定</div>
+                        </div>
+                    </div>
+                    <hr align="center" width="100%">
+            </section>
+            <section class="settle_Accounts">
+                <div class="outter1">
+                    <div class="outter2">
+                        <div class="showFinalPrice">
+                            <div class="ppp">
+                                <div class="forty">總金額</div>
+                                <div class="price_TotalPieces"><span class="nt">NT. </span><span class="finalPrice totalPrice">1770</span></div>
+                            </div>
+                            <div class="ppp">
+                                <div class="forty">運費</div>
+                                <div class="Freight"><span class="nt">NT. </span><span class="finalPrice Freight">30</span></div>
+                            </div>
+                            <hr align="center" width="100%">
+                            <div class="ppp">
+                                <div class="forty">應付金額</div>
+                                <div class="price_TotalPlusFreight"><span class="nt">NT. </span><span class="finalPrice totalPriceAndFreight">1800</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="ConfirmPaymentBtn">
+                        <input type="submit" value="確認付款" ></span>
+                    </form>
+                </div>
+            </section>
+		</main>
+		<!--手機版會員及購物車置底-->
+		<div class="footbars">
+			<div class="footbar1">
+				<a href="/pages/cart.html" class="mobile_cartArea"><img class="mobile_cart_icon" src="../img/cart-mobile.png" alt="mobile_cart_icon"><span class="footbartext">購物車
+					<span>(</span><span class="mobile_cart_counter countValue">0</span><span>)</span>
+				</a>
+			</div>
+			<div class="footbar2">
+				<a href="#"><img class="mobile_member_icon" src="../img/member-mobile.png" alt="mobile_member_icon"><span  class="footbartext">會員</span></a>
+			</div>
+		</div>
+<!-- Footer -->
+		<footer class="mainFooter">
+			<div class="footer-navicon">
+				<ul class="footer-nav">
+					<li><a href="#">關於 Stylish</a></li>
+					<li class="saparation_f"><a href="#">服務條款</a></li>
+					<li><a href="#">隱私政策</a></li>
+					<li class="saparation_f"><a href="#">聯絡我們</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+				<div class="footicon">
+					<a href="#"><img class="line_icon" src="../img/line.png" alt="line icon"></a>
+					<a href="#"><img class="twitter_icon" src="../img/twitter.png" alt="twitter icon"></a>
+					<a href="#"><img class="fb_icon" src="../img/facebook.png" alt="fb icon"></a>
+				</div>
+			</div>
+			<small>&copy; 2018. All rights reserved</small>
+		</footer>
+		<script src="../js/global.js"></script> <!--連結主內容物api, 搜索, 自動加載-->
+        <script src="../js/cart.js"></script> 
+        <script src="../js/TapPay.js"></script>
+	</body>
+</html>

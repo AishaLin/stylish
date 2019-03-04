@@ -1,0 +1,424 @@
+/* =================================
+Section 1
+==================================== */
+
+input[type="submit"] {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+main {
+    width: 84%;
+    margin: 0 auto 50px auto;
+}
+.product_PiecesField span {
+    display: none;
+}
+/*主要圖片*/
+.opt_Information {
+    display: flex;
+    flex-direction: column;
+}
+.frame_product_MainImg {
+    width: 100vw;
+    height: 133vw;
+    /* background: #d8d8d8; */
+    align-self: center;
+    position: relative;
+}
+.product_MainImg {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*名稱、價格*/
+hgroup h1 {
+    font-family: NotoSansCJKtc-Regular;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: left;
+    color: #3f3a3a;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+hgroup h6 {
+    font-family: NotoSansCJKtc-Regular;
+    font-size: 16px;
+    letter-spacing: 3.2px;
+    text-align: left;
+    color: #bababa;
+    line-height: 0.5;
+    margin: 15px 0 30px 0; 
+}
+
+/*選購欄位*/
+.product_ColorGroup,
+.opt_ColorGroup,
+.product_SizeGroup,
+.opt_SizeGroup,
+.product_PiecesField {
+    display: flex;
+    align-items: center;
+}
+.product_ColorGroup,
+.product_SizeGroup {
+    margin: 30px 0;
+}
+.product_ColorGroup span,
+.product_SizeGroup span,
+.product_PiecesField span {
+    font-family: NotoSansCJKtc-Regular;
+    font-size: 14px;
+    letter-spacing: 2.8px;
+    text-align: left;
+    color: #3f3a3a;
+}
+.opt_ColorFrame {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    margin: 0 12px;
+}
+.showFrame {
+    border: 1px solid rgb(71, 60, 60);
+}
+.opt_Color {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+}
+.opt_Size {
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ececec;
+    color: #585252;
+}
+.sizeOutOfStock {
+    background: #ececec;
+    color: #fff;
+}
+.checkSize {
+    background: #331818;
+    color: #e7dede;
+}
+.opt_PiecesField {
+    height: 44px;
+    border: 1px solid #979797;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-grow: 1;
+}
+.opt_Pieces {
+    text-align: center;
+    height: 100%;
+}
+.opt_minus,
+.opt_addition {
+    flex-grow: 1;
+    height: 100%;
+    width: 10%;
+}
+/*使文字上下置中*/
+.opt_minus::after,
+.opt_addition::after {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    background: #f00;
+}
+.purchase_Button {
+    height: 44px;
+    color: #fff;
+    background: #000;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: NotoSansCJKtc;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 3.2px;
+    text-align: left;
+}
+.donNotSubmit { 
+    color: #fff;
+    background: rgb(114, 111, 111);
+}
+
+
+/*商品敘述*/
+.product_hint {
+    font-family: NotoSansCJKtc;
+    font-size: 14px;
+    line-height: 1;
+    text-align: left;
+    color: #3f3a3a;
+    margin: 25px 0;
+}
+
+/* =================================
+Section 2
+==================================== */
+/*分隔線*/
+.detail_SeparationText {
+    width: 150px;
+    height: 30px;
+    font-family: NotoSansCJKtc-Regular;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 3.2px;
+    text-align: left;
+    color: #8b572a;
+}
+.detail_SeparationLine {
+    display: flex;
+}
+hr {
+    padding: 0;
+    height: 1px;
+    align-self: center;
+}
+
+/*細部說明*/
+.product_Detail p {
+    font-family: NotoSansCJKtc-Regular;
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: left;
+    color: #3f3a3a;
+}
+.frame_product_DetailImg {
+    width: 100％;
+    min-height: auto;
+    height: calc(100vw*0.84/1.78);
+    /* background: #d8d8d8; */
+    align-self: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+.product_DetailImg {
+    max-height: 100%;
+    max-width: 100%;    
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* =================================
+Media Queries
+==================================== */
+@media (min-width: 550px) {
+    main {
+        width: 93%;
+        margin: 50px auto 70px auto;
+    }
+    .product_PiecesField span {
+        display: flex;
+    }
+    .opt_Information article{
+        flex-grow: 1;
+    }
+    /*主要圖片*/
+    .opt_Information {
+        flex-direction: row;
+    }
+    .frame_product_MainImg {
+        width: 60%;
+        height: calc(93vw*0.60*1.33);
+        align-self: flex-start;
+        margin-right: 3%;
+    }
+    /*名稱、價格*/
+    hgroup h1 {
+        margin: 0 0 10px 0;
+    }
+    /*選購欄位*/
+    .product_ColorGroup,
+    .product_SizeGroup {
+        margin: 20px 0;
+    }
+    .product_ColorGroup span,
+    .product_SizeGroup span,
+    .product_PiecesField span {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .opt_ColorFrame {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        margin: 0 4px;
+    }
+    .opt_Size {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin: 0 5px;
+    }
+    /*商品敘述*/
+    .product_hint {
+        line-height: 0.3;
+    }
+    /*細部說明圖*/
+    .frame_product_DetailImg {
+        width: 55%;
+        height: calc(93vw*0.55/1.78);
+        align-self: center;
+    }
+}
+
+@media (min-width: 651px) {
+    .opt_ColorFrame {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        margin: 0 8px;
+    }
+    .opt_Size {
+        width: 34px;
+        height: 34px;
+        border-radius: 17px;
+        margin: 0 7px;
+    }
+
+    /*細部說明*/
+    .product_Detail {
+        margin-top: 40px;
+    }
+    /*商品敘述*/
+    .product_hint {
+        line-height: 0.6;
+    }
+}
+
+@media (min-width: 801px) {
+    main {
+        width: 75%;
+    }
+    .frame_product_MainImg {
+        height: calc(75vw*0.60*1.33);
+        margin-right: 3%;
+    }
+    .opt_ColorFrame {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        margin: 0 10px;
+    }
+    .opt_Size {
+        width: 38px;
+        height: 38px;
+        border-radius: 19px;
+        margin: 0 9px;
+    }
+    
+    /*細部說明*/
+    .product_Detail {
+        margin-top: 50px;
+    }
+    .frame_product_DetailImg {
+        height: calc(75vw*0.55/1.78);
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        width: 60%;
+        margin: 65px auto 75px auto;
+    }
+    .frame_product_MainImg {
+        width: 60%;
+        height: calc(60vw*0.60*1.33);
+        max-width: 560px;
+        max-height: 745px;
+        margin-right: 5%;
+    }
+    /*名稱、價格*/
+    hgroup h1 {
+        font-size: 28px;
+        letter-spacing: 6px;
+        margin: 0 0 25px 0;
+    }
+    hgroup h6 {
+        font-size: 18px;
+        letter-spacing: 3px;
+        margin: 15px 0 40px 0; 
+    }
+    /*選購欄位*/
+    .product_ColorGroup span,
+    .product_SizeGroup span,
+    .product_PiecesField span {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    .opt_ColorFrame {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        margin: 0 10px;
+    }
+    .opt_Size {
+        width: 38px;
+        height: 38px;
+        border-radius: 19px;
+        margin: 0 9px;
+    }
+    
+    .opt_PiecesField {
+        margin-left: 12px;
+    }
+    .purchase_Button {
+        height: 60px;
+        margin: 25px 0;
+        font-size: 20px;
+        line-height: 1.88;
+        letter-spacing: 4px;
+    }
+    /*商品敘述*/
+    .product_hint {
+        font-size: 18px;
+        margin: 25px 0;
+    }
+    /*分隔線*/
+    .detail_SeparationText {
+        width: 150px;
+        font-size: 20px;
+        line-height: 1.88;
+        letter-spacing: 4px;
+    }
+    /*細部說明*/
+    .frame_product_DetailImg {
+        height: calc(60vw*0.55/1.78);
+        margin-bottom: 40px;
+    }
+    .product_Detail p {
+        font-size: 18px;
+        line-height: 1.9;
+    }
+}
