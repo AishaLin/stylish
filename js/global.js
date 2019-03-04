@@ -10,17 +10,6 @@ let data = []
 showCounter()
 localStorageStatus()
 
-//點選 logo 回到首頁
-let mainLogo = document.querySelector('.goToHome')
-mainLogo.addEventListener('click',goToHomePage)
-
-
-//從他頁回到首頁
-function goToHomePage() {
-  window.location.pathname = `index.html`
-}
-
-
 
 //依產品類別渲染資訊
 let productType = document.querySelectorAll('.productType')
