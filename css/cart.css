@@ -129,7 +129,7 @@ DistributionCountry_and_PaymentMethod
 ==================================== */
 .DistributionCountry_and_PaymentMethod {
     width: 100%;
-    height: 40vw;
+    height: auto;
     background-color: #e8e8e8;
     margin: 20px 0;
     font-family: NotoSansCJKtc-Regular;
@@ -138,13 +138,14 @@ DistributionCountry_and_PaymentMethod
     color: #3f3a3a;
     padding: 10px;
 }
-.DistributionCountry,
-.PaymentMethod {
+.DistributionCountry p,
+.PaymentMethod p {
     width: 100%;
+    margin: 0 0 10px 0;
 }
 .DistributionCountry_and_PaymentMethod form {
     width: 100%;
-    height: calc(40vw*0.20);
+    height: 20%;
     margin: 10px 0;
 }
 .select_Country,
@@ -328,9 +329,11 @@ Media Queries
         align-items: center;
     }
     .DistributionCountry_and_PaymentMethod {
-        height: 150px;
         margin: 20px 0;
         font-size: 16px;
+    }
+    .DistributionCountry_and_PaymentMethod p {
+        margin: 0;
     }
 }
 
@@ -370,9 +373,6 @@ Media Queries
     .DistributionCountry p,
     .PaymentMethod p {
         width: 35%;
-    }
-    .DistributionCountry_and_PaymentMethod {
-        height: 80px;
     }
     .DistributionCountry,
     .PaymentMethod {

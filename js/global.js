@@ -4,11 +4,23 @@ let typeName = 'all'
 let mainContent = document.querySelector('main')
 let pagingUrl = null
 let pagingNew = null
-let stopLoading = false
+let stopLoading = true
 let data = []
 
 showCounter()
 localStorageStatus()
+
+//點選 logo 回到首頁
+let mainLogo = document.querySelector('.goToHome')
+mainLogo.addEventListener('click',goToHomePage)
+
+
+//從他頁回到首頁
+function goToHomePage() {
+  window.location.pathname = `/index.html`
+}
+
+
 
 //依產品類別渲染資訊
 let productType = document.querySelectorAll('.productType')
@@ -16,10 +28,9 @@ productType.forEach(el=> {
   el.addEventListener('click', getTypeData)
 })
 function getTypeData(el) {
-  window.location.pathname = `/index.html`
-  init()
   let typeName = el.target.dataset.linkname //自定義data-*屬性的標的物件
   let url = `${urlRoot}/${typeName}`
+  init()
   loader()
   fetchApi(url, typeName)  
 }
@@ -47,16 +58,16 @@ function fetchApi(url, typeName) {
 
 //scroll分頁加載
 function loadNew(){
-    const windowHeight = document.documentElement.clientHeight //視窗高度 //const windowHeight = window.innerHeight
-    const bottomArea = document.querySelector('footer').getBoundingClientRect()
-    const footTotop = bottomArea.top //footer至頂端高度
-    if(stopLoading) {
-      return
-    } else if(footTotop < windowHeight) {
-      loader()
-      fetchApi(pagingUrl, typeName)
-      stopLoading = true //跳出
-    }
+  const windowHeight = document.documentElement.clientHeight //視窗高度 //const windowHeight = window.innerHeight
+  const bottomArea = document.querySelector('footer').getBoundingClientRect()
+  const footTotop = bottomArea.top //footer至頂端高度
+  if(stopLoading) {
+    return
+  } else if(footTotop < windowHeight) {
+    loader()
+    fetchApi(pagingUrl, typeName)
+    stopLoading = true //跳出
+  }
 }
 
 //初始化
@@ -75,13 +86,13 @@ function showNone() {
 
 //顯示加載中圖示
 function loader(){
-    const loaderWrap = document.createElement('div')
-    loaderWrap.className = 'loader-wrap'
-    const loader = document.createElement('img')
-    loader.className = 'loader-img'
-    loader.setAttribute("src",`../img/loading.gif`) 
-    loaderWrap.appendChild(loader) 
-    mainContent.appendChild(loaderWrap)
+  const loaderWrap = document.createElement('div')
+  loaderWrap.className = 'loader-wrap'
+  const loader = document.createElement('img')
+  loader.className = 'loader-img'
+  loader.setAttribute("src",`../img/loading.gif`) 
+  loaderWrap.appendChild(loader) 
+  mainContent.appendChild(loaderWrap)
 }
 
 //主頁標的產品渲染細項
@@ -211,10 +222,10 @@ function showCounter() {
 function localStorageStatus() {
   //當localStorage沒有資料陣列，指定一個空陣列放入資料庫
   if (localStorage.getItem('item') === null) {
-      var storageArray = [];
-      localStorage.setItem('item', JSON.stringify(storageArray));
+    var storageArray = [];
+    localStorage.setItem('item', JSON.stringify(storageArray));
   //當localStorage已存在資料陣列，指定一個內容與陣列資料庫相同的陣列
   } else {
-      var storageArray = JSON.parse(localStorage.getItem('item'));
+    var storageArray = JSON.parse(localStorage.getItem('item'));
   }
 }

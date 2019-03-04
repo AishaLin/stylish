@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
 	margin: 0;
+	padding-bottom: 150px;
 }
 footer {
 	width: 100vw;
