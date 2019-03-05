@@ -47,12 +47,13 @@ function statusChangeCallback(response) {
         console.log('User cancelled login or did not fully authorize.');
         return;
     }
-    signupAPI()
+    
 }
 
 function fb_Login() {
     FB.login(function(response) {
         statusChangeCallback(response);
+        signupAPI()
     })
 }
 
