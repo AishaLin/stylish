@@ -33,8 +33,8 @@ function statusChangeCallback(response) {
         logInBtn.innerHTML = '登出'
         member_Information.style.display = "initial"
         fbAccessToken = response.authResponse.accessToken
-        signupAPI()
         console.log(fbAccessToken)
+        break;
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -45,13 +45,14 @@ function statusChangeCallback(response) {
         // 將資訊帶進頁面
     } else {
         console.log('User cancelled login or did not fully authorize.');
+        return;
     }
+    signupAPI()
 }
 
 function fb_Login() {
     FB.login(function(response) {
         statusChangeCallback(response);
-        signupAPI()
     })
 }
 
@@ -68,10 +69,10 @@ function signupAPI() {
         headers: {
         'Content-Type': 'application/json',
         },
-        body: {
+        body: JSON.stringify( {
             "provider":"facebook",
             "access_token": fbAccessToken
-          }
+          })
     })
     .then(res=>res.json())
     .then(json=>{
