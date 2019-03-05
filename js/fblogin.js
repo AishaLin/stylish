@@ -34,7 +34,6 @@ function statusChangeCallback(response) {
         member_Information.style.display = "initial"
         fbAccessToken = response.authResponse.accessToken
         console.log(fbAccessToken)
-        break;
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -45,7 +44,6 @@ function statusChangeCallback(response) {
         // 將資訊帶進頁面
     } else {
         console.log('User cancelled login or did not fully authorize.');
-        return;
     }
     
 }
