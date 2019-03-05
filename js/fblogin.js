@@ -33,6 +33,7 @@ function statusChangeCallback(response) {
         logInBtn.innerHTML = '登出'
         member_Information.style.display = "initial"
         fbAccessToken = response.authResponse.accessToken
+        signupAPI()
         console.log(fbAccessToken)
         // 取得資料
         // FB.api('/me','GET',{
@@ -55,10 +56,10 @@ function fb_Login() {
 }
 
 
+// 在local storage 存入profile 資訊
 if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
-
 function signupAPI() {
     console.log('00')
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
