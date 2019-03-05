@@ -53,10 +53,41 @@ a {
 	background-color: red;
 	color: #fff;
 	position: absolute;
-	right: 30px;
+	right: 0;
 	top: 2px;
 	text-align: center;
 	display: none;
+}
+.container{
+	width: 100px;
+	text-align: center;
+	position: relative;
+}
+.item1{
+	cursor:pointer;
+	position: absolute;
+	right: 0;
+}
+.item2{
+	display: none;
+	font-size: 16px;
+	color: #505050;
+	background-color: #F0F0F0;
+	position: absolute;
+	right: 0;
+	top: 70px;
+	width: 100%;
+	text-align: center;
+}
+.member_Information {
+	display: none;
+}
+.item2 div {
+	line-height: 16px;
+	margin: 10px 0;
+}
+.item2 hr {
+	margin: 10px 0 0 0;
 }
 
 /* =================================
@@ -436,6 +467,9 @@ small {
 		height: 44px;
 		margin-right: 30px;
 	}
+	.btn_web_shopping-cart01 {
+		margin-right: 0;
+	}
 	.pureSearch {
 		display: initial;
 	}
@@ -447,7 +481,7 @@ small {
 		height: 44px;
 		border-radius: 50px;
 		border: 1px solid #828282;
-		margin: auto;
+		margin-top: 0;
 		margin-right: 30px;
 		display: flex;
 		justify-content: flex-end;

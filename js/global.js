@@ -218,3 +218,4 @@ function localStorageStatus() {
     var storageArray = JSON.parse(localStorage.getItem('item'));
   }
 }
+
