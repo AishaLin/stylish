@@ -1,10 +1,3 @@
-// function checkLoginState() {
-//     FB.getLoginStatus(function(response) {
-//         statusChangeCallback(response);
-//     });
-// }
-
-
 const logInBtn = document.querySelector('.logInBtn')
 const mobile_member_icon = document.querySelector('.mobile_member_icon')
 const member_Information = document.querySelector('.member_Information')
@@ -51,8 +44,9 @@ function statusChangeCallback(response) {
 function fb_Login() {
     FB.login(function(response) {
         statusChangeCallback(response);
-        signupAPI()
     })
+    signupAPI()
+
 }
 
 
