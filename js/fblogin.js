@@ -43,7 +43,9 @@ function fbLogIn() {
             let profile_consumerName = document.querySelector('.profile_consumerName')
             let profile_email = document.querySelector('.profile_email')
             // let profile_tel = document.querySelector('.profile_tel')
+            console.log('22')
             consumer_photo.setAttribute('src', `http://graph.facebook.com/${response.authResponse.userID}/picture?type=normal`)
+            console.log(response.authResponse.userID)
             profile_consumerName.innerHTML = `${FBlogin.name}`
             profile_email.innerHTML = `${FBlogin.email}`
 
