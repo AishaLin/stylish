@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<title>Stylish</title>
 		<link rel="stylesheet" href="css/global.css">
-		<link rel="stylesheet" href="css/product.css">
+		<link rel="stylesheet" href="css/profile.css">
 	</head>
 
 	<body>
@@ -30,8 +30,14 @@
 					<a href="cart.html" class="cartArea"><img class="btn_web_shopping-cart01" src="img/cart.png" alt="cart icon">
 						<span class="cart_counter countValue">0</span>
 					</a>
-					<a href="#"><img class="btn_member01" src="img/member.png" alt="member icon"></a>
-				</div>
+					<div class="container">
+                        <a><img class="btn_member01 item1" title="1" onclick="showOrHide(this.title);" src="img/member.png" alt="member icon"></a>
+                        <div class="item2" id="d1">
+                            <div class="member_Information"><a href="profile.html">帳戶資訊</a><hr/></div>
+                            <div class="logInBtn">登入</div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 			<!--手機版搜尋列-->
 			<div class="mobileSearchBar">
@@ -55,50 +61,23 @@
 <!-- Content -->
 		<main class="productContent">
 			<section class="opt_Information">
-				<div class="frame_product_MainImg">
-					<img class="product_MainImg">
-				</div>
+				<div class="consumer_photo_frame"><img class="consumer_photo" src="http://graph.facebook.com/4/picture?type=normal"></div>
 				<article class="product_Description">
-					<hgroup>
-						<h1 class="product_Name"></h1>
-						<h6 class="product_ID"></h6>
-						<h1 class="product_Price"></h1>
-					</hgroup>
-					<hr align="center" width="100%">
-					<div class="product_ColorGroup">
-						<span>顏色｜</span>
-						<div class="opt_ColorGroup"></div>
-					</div>
-					<div class="product_SizeGroup">
-						<span>尺寸｜</span>
-						<div class="opt_SizeGroup"></div>
-					</div>
-					<div class="product_PiecesField">
-						<span>數量｜</span>
-						<div class="opt_PiecesField">
-							<div class="opt_minus">-</div>
-							<input type="text" class="opt_Pieces" readonly=”true” value="1">
-							<div class="opt_addition">+</div>
-						</div>
-					</div>
-					<form class="purchase_Button">
-						<input type="submit" value="加入購物車" ></span>
-					</form>
-					<div class="product_hint">
-						<p class="product_note"></p><br>
-						<p class="product_texture"></p>
-						<p class="product_thickness"></p>
-						<p class="product_elasticity"></p><br>
-						<p class="product_materialPlace"></p>
-						<p class="product_processPlace"></p>
-					</div>
+                    <h3 class="consumerInformation">會員資料</h3>
+                    <hr align="center" width="100%">
+                    <div class="Ordering_Inf_div">
+                        <div class="Ordering_Inf">姓名 |</div>
+                        <div class="profile_consumerName"></div>
+                    </div>
+                    <div class="Ordering_Inf_div">
+                        <div class="Ordering_Inf">e-mail |</div>
+                        <div class="profile_email"></div>
+                    </div>
+                    <div class="Ordering_Inf_div">
+                        <div class="Ordering_Inf">手機 |</div>
+                        <div class="profile_tel"></div>
+                    </div>
 				</article>
-			</section>
-			<section class="product_Detail">
-				<div class="detail_SeparationLine">
-					<span class="detail_SeparationText">細部說明</span><hr align="center" width="100%">
-				</div>
-				<div class="storyAndImgs"></div>
 			</section>
 		</main>
 		<!--手機版會員及購物車置底-->
@@ -132,7 +111,7 @@
 		</footer>
 
 		<script src="js/global.js"></script> <!--連結主內容物api, 搜索, 自動加載-->
-		<script src="js/product.js"></script> 
+		<script src="js/profile.js"></script> 
 		<script async defer src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=2072629076292893&autoLogAppEvents=1"></script>
 		<script src="js/fblogin.js"></script>
 

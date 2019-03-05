@@ -1,0 +1,40 @@
+main {
+    width: 85vw;
+    margin: 25px auto 5px auto;
+}
+hr {
+    height: 3px;
+    background-color: #3f3a3a
+}
+.opt_Information {
+    display: flex;
+    flex-grow: 1;
+}
+.consumer_photo_frame {
+    width: 200px;
+    height: 200px;
+    background: #b4aeae;
+    margin-right: 20px;
+    position: relative;
+}
+.consumer_photo_Img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.consumerInformation {
+    margin-top: 0;
+}
+.product_Description {
+}
+.Ordering_Inf_div {
+    display: flex;
+    margin: 10px 0 0 0;
+}
