@@ -58,7 +58,7 @@ function statusChangeCallback(response) {
 function fb_Login(response) {
     FB.login(function(response) {
         checkLoginState(response);
-    })
+    },{ scope: 'email,public_profile'})
 }
 
 
@@ -66,9 +66,9 @@ function fb_Login(response) {
 if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
-function signupAPI(obj) {
+function signupAPI(obj,res) {
     console.log('token', fbAccessToken)
-    const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
+    const signupUrl = `https://api.appworks-school.tw/api/1.0/user/signin`
     fetch(signupUrl,{
         method: 'Post',
         headers: {
@@ -76,7 +76,7 @@ function signupAPI(obj) {
         },
         body: JSON.stringify(obj)
     })
-    .then(res=>res.json())
+    .then(res =>res.json())
     .then(json=>{
         console.log(json)
         let profileData = json.data.user
