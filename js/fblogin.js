@@ -12,9 +12,9 @@ logInBtn.addEventListener('click', fbLogIn)
 mobile_member_icon.addEventListener('click', fbLogIn)
 
 let consumer_Information = null;
-var FBlogin = function(id,email,name){
+var FBlogin = function(userID,email,name){
 	var consumer_Information = {
-        'id' : id,
+        'userID' : userID,
 		'email' : email,
 		'name' : name,
     };
@@ -33,24 +33,24 @@ function fbLogIn() {
             member_Information.style.display = "initial"
             // 取得資料
             FB.api('/me','GET',{
-				"fields" : "id,name,gender,email"
+				"fields" : "userID,name,gender,email"
 			},function(response){
 				// FB登入視窗點擊登入後，會將資訊回傳到此處。
-				FBlogin(response.id,response.email,response.name,response);
+				FBlogin(response.userID,response.email,response.name,response);
             });
             // 將資訊帶進頁面
             let consumer_photo = document.querySelector('.consumer_photo')
             let profile_consumerName = document.querySelector('.profile_consumerName')
             let profile_email = document.querySelector('.profile_email')
             // let profile_tel = document.querySelector('.profile_tel')
-            consumer_photo.setAttribute('src', `http://graph.facebook.com/${FBlogin.id}/picture?type=normal`)
+            consumer_photo.setAttribute('src', `http://graph.facebook.com/${FBlogin.userID}/picture?type=normal`)
             profile_consumerName.innerHTML = `${FBlogin.name}`
             profile_email.innerHTML = `${FBlogin.email}`
 
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
-    }, {scope: 'id, user picture, name, email'});
+    }, {scope: 'userID, user picture, name, email'});
 }
 
 
