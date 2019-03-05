@@ -46,7 +46,6 @@ function fb_Login() {
         statusChangeCallback(response);
     })
     signupAPI()
-
 }
 
 
@@ -55,7 +54,7 @@ if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
 function signupAPI() {
-    console.log('token',fbAccessToken)
+    console.log(`token ${fbAccessToken}`)
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
         method: 'Post',
