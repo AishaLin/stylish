@@ -18,6 +18,13 @@ mobile_member_icon.addEventListener('click', fb_Login)
 //     return consumer_Information;
 // }
 
+// 檢查當前的登入狀態
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+}
+// 依登入狀態執行事件
 function statusChangeCallback(response) {
     console.log('response of FB.login: ', response)
     if (response.authResponse) {
@@ -26,7 +33,12 @@ function statusChangeCallback(response) {
         logInBtn.innerHTML = '登出'
         member_Information.style.display = "initial"
         fbAccessToken = response.authResponse.accessToken
+        const user = {
+            "provider":"facebook",
+            "access_token": fbAccessToken
+          }
         console.log(fbAccessToken)
+        signupAPI(user, res)
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -41,11 +53,10 @@ function statusChangeCallback(response) {
     
 }
 
-function fb_Login() {
+function fb_Login(response) {
     FB.login(function(response) {
-        statusChangeCallback(response);
+        checkLoginState(response);
     })
-    signupAPI()
 }
 
 
@@ -53,7 +64,7 @@ function fb_Login() {
 if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
-function signupAPI() {
+function signupAPI(obj, res) {
     console.log(`token ${fbAccessToken}`)
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
@@ -61,20 +72,17 @@ function signupAPI() {
         headers: {
         'Content-Type': 'application/json',
         },
-        body: {
-            "provider":"facebook",
-            "access_token": fbAccessToken
-          }
+        body: JSON.stringify(obj)
     })
     .then(res=>res.json())
     .then(json=>{
-        console.log('11')
-        let profileData = json.data
+        console.log('json')
+        let profileData = json.data.user
         if(profileData) {
             let profileDataArray = {
-                name: profileData.user.name,
-                email: profileData.user.email,
-                picture: profileData.user.picture
+                name: profileData.name,
+                email: profileData.email,
+                picture: profileData.picture
             }
             console.log(profileDataArray)
             let profileInfData = JSON.parse(localStorage.getItem('profileInf'))
