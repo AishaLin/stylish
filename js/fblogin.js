@@ -1,14 +1,9 @@
-
-
-window.fbAsyncInit = function() {
-    FB.init({
-    appId      : '2072629076292893',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v3.2' // The Graph API version to use for the call
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
     });
 }
+
 
 const logInBtn = document.querySelector('.logInBtn')
 const mobile_member_icon = document.querySelector('.mobile_member_icon')
@@ -55,7 +50,7 @@ function fbLogIn() {
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
-    }, {scope: 'user picture, name, email'});
+    }, {scope: 'id, user picture, name, email'});
 }
 
 

@@ -9,6 +9,31 @@
 	</head>
 
 	<body>
+		<!--FB Login-->
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				appId      : '2072629076292893',
+				cookie     : true,
+				xfbml      : true,
+				version    : 'v3.2'
+				});
+				
+				FB.AppEvents.logPageView();   	
+			};
+			
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 <!-- Header -->
 		<header>
 			<div class="mainhead">
@@ -34,7 +59,7 @@
 						<a><img class="btn_member01 item1" title="1" onclick="showOrHide(this.title);" src="img/member.png" alt="member icon"></a>
 						<div class="item2" id="d1">
 							<div class="member_Information"><a href="profile.html">帳戶資訊</a><hr/></div>
-							<div class="logInBtn">登入</div>
+							<div class="logInBtn" onlogin="checkLoginState()" >登入</div>
 						</div>
 					</div>
 				</div>
@@ -78,7 +103,7 @@
 				</a>
 			</div>
 			<div class="footbar2">
-				<a href="#"><img class="mobile_member_icon" src="img/member-mobile.png" alt="mobile_member_icon" onlogin="checkLoginState()" ><span  class="footbartext">會員</span></a>
+				<a href="#"><img class="mobile_member_icon" src="img/member-mobile.png" alt="mobile_member_icon"><span  class="footbartext">會員</span></a>
 			</div>
 		</div>
 <!-- Footer -->
