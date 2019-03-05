@@ -60,6 +60,7 @@ if(!localStorage.getItem('profileInf')) {
 }
 
 function signupAPI() {
+    console.log('00')
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
         method: 'Post',
@@ -73,6 +74,7 @@ function signupAPI() {
     })
     .then(res=>res.json())
     .then(json=>{
+        console.log('11')
         let profileData = json.data
         if(profileData) {
             let profileDataArray = {
