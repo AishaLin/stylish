@@ -38,7 +38,7 @@ function statusChangeCallback(response) {
             "access_token": fbAccessToken
           }
         console.log(fbAccessToken)
-        signupAPI(user, res)
+        signupAPI(user)
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -64,7 +64,7 @@ function fb_Login(response) {
 if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
-function signupAPI(obj, res) {
+function signupAPI(obj) {
     console.log(`token ${fbAccessToken}`)
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
