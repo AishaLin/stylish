@@ -11,7 +11,7 @@ const member_Information = document.querySelector('.member_Information')
 const consumer_photo = document.querySelector('.consumer_photo')
 const profile_consumerName = document.querySelector('.profile_consumerName')
 const profile_email = document.querySelector('.profile_email')
-
+const profile_Content = document.querySelector('.profile_Content')
 let fbAccessToken =''
 
 
@@ -53,9 +53,34 @@ function statusChangeCallback(response) {
 function fb_Login() {
     FB.login(function(response) {
         statusChangeCallback(response);
+
     })
 }
 
+function signupAPI() {
+    const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
+    fetch(signupUrl,{
+        method: 'Post',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: {
+            "provider":"facebook",
+            "access_token": fbAccessToken
+          }
+    })
+    .then(res=>res.json())
+    .then(json=>{
+        let profileData = json.data
+        if(profileData) {
+            consumer_photo.setAttribute('src', `${profileData.user.picture}`)
+            profile_consumerName.innerHTML = profileData.user.name
+            profile_email.innerHTML = profileData.user.email
+        } else {
+            profile_Content.innerHTML = '查無會員資料';
+        } 
+    })
+}
 
 
 //會員登入菜單
@@ -71,3 +96,5 @@ function showOrHide(title) {
         hide = true;
     }
 }
+
+
