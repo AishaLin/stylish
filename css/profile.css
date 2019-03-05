@@ -11,8 +11,10 @@ hr {
     flex-grow: 1;
 }
 .consumer_photo_frame {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    width: 100px;
+    height: 100px;
     background: #b4aeae;
     margin-right: 20px;
     position: relative;
@@ -31,8 +33,6 @@ hr {
 }
 .consumerInformation {
     margin-top: 0;
-}
-.product_Description {
 }
 .Ordering_Inf_div {
     display: flex;

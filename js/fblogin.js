@@ -11,15 +11,15 @@ const mobile_member_icon = document.querySelector('.mobile_member_icon')
 logInBtn.addEventListener('click', fbLogIn)
 mobile_member_icon.addEventListener('click', fbLogIn)
 
-let consumer_Information = null;
-var FBlogin = function(userID,email,name){
-	var consumer_Information = {
-        'userID' : userID,
-		'email' : email,
-		'name' : name,
-    };
-    return consumer_Information;
-}
+// let consumer_Information = null;
+// var FBlogin = function(userID,email,name){
+// 	var consumer_Information = {
+//         'userID' : userID,
+// 		'email' : email,
+// 		'name' : name,
+//     };
+//     return consumer_Information;
+// }
 
 function fbLogIn() {
     FB.login(function(response) {
@@ -32,18 +32,18 @@ function fbLogIn() {
             logInBtn.innerHTML = '登出'
             member_Information.style.display = "initial"
             // 取得資料
-            FB.api('/me','GET',{
-				"fields" : "userID,name,gender,email"
-			},function(response){
-				// FB登入視窗點擊登入後，會將資訊回傳到此處。
-				FBlogin(response.userID,response.email,response.name,response);
-            });
+            // FB.api('/me','GET',{
+			// 	"fields" : "userID,name,gender,email"
+			// },function(response){
+			// 	// FB登入視窗點擊登入後，會將資訊回傳到此處。
+			// 	FBlogin(response.userID,response.email,response.name,response);
+            // });
             // 將資訊帶進頁面
             let consumer_photo = document.querySelector('.consumer_photo')
             let profile_consumerName = document.querySelector('.profile_consumerName')
             let profile_email = document.querySelector('.profile_email')
             // let profile_tel = document.querySelector('.profile_tel')
-            consumer_photo.setAttribute('src', `http://graph.facebook.com/${FBlogin.userID}/picture?type=normal`)
+            consumer_photo.setAttribute('src', `http://graph.facebook.com/${response.authResponse.userID}/picture?type=normal`)
             profile_consumerName.innerHTML = `${FBlogin.name}`
             profile_email.innerHTML = `${FBlogin.email}`
 
