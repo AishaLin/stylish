@@ -50,7 +50,7 @@ function statusChangeCallback(response) {
 function fb_Login() {
     FB.login(function(response) {
         statusChangeCallback(response);
-
+        signupAPI()
     })
 }
 
@@ -85,6 +85,7 @@ function signupAPI() {
             console.log(profileInfData)
             profileInfData.push(profileDataArray)
             localStorage.setItem('profileInf', JSON.stringify(profileInfData))
+            console.log('99')
         } else {
             console.log(json)
             alert('查無會員資訊。');
