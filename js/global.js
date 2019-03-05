@@ -79,7 +79,7 @@ function loader(){
   loaderWrap.className = 'loader-wrap'
   const loader = document.createElement('img')
   loader.className = 'loader-img'
-  loader.setAttribute("src",'../img/loading.gif') 
+  loader.setAttribute("src",'stylish/img/loading.gif') 
   loaderWrap.appendChild(loader) 
   mainContent.appendChild(loaderWrap)
 }
