@@ -4,10 +4,6 @@ const member_Information = document.querySelector('.member_Information')
 
 let fbAccessToken =''
 
-
-logInBtn.addEventListener('click', fb_Login)
-mobile_member_icon.addEventListener('click', fb_Login)
-
 // let consumer_Information = null;
 // var FBlogin = function(userID,email,name){
 // 	var consumer_Information = {
@@ -38,7 +34,8 @@ function statusChangeCallback(response) {
             "access_token": fbAccessToken
           }
         console.log(fbAccessToken)
-        signupAPI(user)
+        signupAPI(user, response)
+
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -48,7 +45,10 @@ function statusChangeCallback(response) {
         // });
         // 將資訊帶進頁面
     } else {
-        console.log('User cancelled login or did not fully authorize.');
+        logInBtn.innerHTML = '登入'
+        member_Information.style.display = "initial"
+        logInBtn.addEventListener('click', fb_Logout)
+        mobile_member_icon.addEventListener('click', fb_Logout)
     }
     
 }
@@ -58,6 +58,22 @@ function fb_Login(response) {
         checkLoginState(response);
     })
 }
+
+function fb_Logout() {
+    if(res.status === 'connected') { 
+        FB.api(`/me/permissions`,"DELETE",function(res) {
+        console.log(res)
+        }) 
+        FB.logout(function (response) {  
+        let path = window.location.pathname
+            if(path.indexOf('/profile.html')!==-1) {
+                window.location.href = `index.html?category=all`
+            }
+        })
+    }
+}
+
+
 
 
 // 在local storage 存入profile 資訊
