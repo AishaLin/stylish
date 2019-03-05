@@ -8,10 +8,7 @@ function checkLoginState() {
 const logInBtn = document.querySelector('.logInBtn')
 const mobile_member_icon = document.querySelector('.mobile_member_icon')
 const member_Information = document.querySelector('.member_Information')
-const consumer_photo = document.querySelector('.consumer_photo')
-const profile_consumerName = document.querySelector('.profile_consumerName')
-const profile_email = document.querySelector('.profile_email')
-const profile_Content = document.querySelector('.profile_Content')
+
 let fbAccessToken =''
 
 
@@ -57,6 +54,11 @@ function fb_Login() {
     })
 }
 
+
+if(!localStorage.getItem('profileInf')) {
+    localStorage.setItem('profileInf',JSON.stringify([]))
+}
+
 function signupAPI() {
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
@@ -73,11 +75,19 @@ function signupAPI() {
     .then(json=>{
         let profileData = json.data
         if(profileData) {
-            consumer_photo.setAttribute('src', `${profileData.user.picture}`)
-            profile_consumerName.innerHTML = profileData.user.name
-            profile_email.innerHTML = profileData.user.email
+            let profileDataArray = {
+                name: profileData.user.name,
+                email: profileData.user.email,
+                picture: profileData.user.picture
+            }
+            console.log(profileDataArray)
+            let profileInfData = JSON.parse(localStorage.getItem('profileInf'))
+            console.log(profileInfData)
+            profileInfData.push(profileDataArray)
+            localStorage.setItem('profileInf', JSON.stringify(profileInfData))
         } else {
-            profile_Content.innerHTML = '查無會員資料';
+            console.log(json)
+            alert('查無會員資訊。');
         } 
     })
 }
