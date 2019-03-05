@@ -62,17 +62,17 @@ if(!localStorage.getItem('profileInf')) {
     localStorage.setItem('profileInf',JSON.stringify([]))
 }
 function signupAPI() {
-    console.log('00')
+    console.log('token',fbAccessToken)
     const signupUrl = 'https://api.appworks-school.tw/api/1.0/user/signin'
     fetch(signupUrl,{
         method: 'Post',
         headers: {
         'Content-Type': 'application/json',
         },
-        body: JSON.stringify( {
+        body: {
             "provider":"facebook",
             "access_token": fbAccessToken
-          })
+          }
     })
     .then(res=>res.json())
     .then(json=>{
