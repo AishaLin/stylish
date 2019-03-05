@@ -48,6 +48,7 @@ function statusChangeCallback(response) {
         // 	FBlogin(response.userID,response.email,response.name,response);
         // });
         // 將資訊帶進頁面
+
     } else {
 
         beforeLogInEventHandler(response)
@@ -89,9 +90,11 @@ function signupAPI(obj,res) {
             console.log(profileDataArray)
             let profileInfData = JSON.parse(localStorage.getItem('profileInf'))
             console.log(profileInfData)
-            profileInfData.push(profileDataArray)
-            localStorage.setItem('profileInf', JSON.stringify(profileInfData))
-            console.log('99')
+            if(profileInfData !== null) {
+                profileInfData.push(profileDataArray)
+                localStorage.setItem('profileInf', JSON.stringify(profileInfData))
+                console.log('99')
+            }
         } else {
             console.log(json)
             alert('查無會員資訊。');
