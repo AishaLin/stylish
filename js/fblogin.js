@@ -36,7 +36,7 @@ function statusChangeCallback(response) {
         logInBtn.innerHTML = '登出'
         member_Information.style.display = "initial"
         fbAccessToken = response.authResponse.accessToken
-
+        console.log(fbAccessToken)
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
