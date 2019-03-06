@@ -79,6 +79,9 @@ a {
 	width: 100%;
 	text-align: center;
 }
+.item2 a {
+	color: #505050;
+}
 .member_Information {
 	display: none;
 }
@@ -88,7 +91,7 @@ a {
 }
 .item2 hr {
 	width: 80%;
-	margin: 10px 0 0 0;
+	margin: 10px auto 0 auto;
 }
 
 /* =================================

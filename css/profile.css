@@ -4,7 +4,7 @@ main {
 }
 hr {
     height: 3px;
-    background-color: #3f3a3a
+    background-color: #3f3a3a;
 }
 .opt_Information {
     display: flex;

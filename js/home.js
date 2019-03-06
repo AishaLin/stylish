@@ -1,11 +1,9 @@
 //直接顯示首頁（all)
-
-//直接顯示首頁（all)
 function homePage() {
   mainContent.innerHTML = ''
-  let url = `${urlRoot}/${typeName}`
+  let url = `${urlRoot}/${category}`
   loader()
-  fetchApi(url, typeName)
+  fetchApi(url, category)
 }
 homePage()
 

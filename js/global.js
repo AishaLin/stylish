@@ -1,6 +1,6 @@
 //連接api相關物件
 let urlRoot = 'https://api.appworks-school.tw/api/1.0/products'
-let typeName = 'all'
+let category = 'all'
 let mainContent = document.querySelector('main')
 let pagingUrl = null
 let pagingNew = null
@@ -10,22 +10,24 @@ let data = []
 showCounter()
 localStorageStatus()
 
-
 //依產品類別渲染資訊
 let productType = document.querySelectorAll('.productType')
 productType.forEach(el=> {
   el.addEventListener('click', getTypeData)
 })
 function getTypeData(el) {
-  let typeName = el.target.dataset.linkname //自定義data-*屬性的標的物件
-  let url = `${urlRoot}/${typeName}`
+  // let typeName = el.target.dataset.linkname //自定義data-*屬性的標的物件
+  category = window.location.search.split('=')[1]
+  console.log(category)
+  let url = `${urlRoot}/${category}`
+  console.log(url)
   init()
   loader()
-  fetchApi(url, typeName)  
+  fetchApi(url, category)  
 }
 
 //連接api
-function fetchApi(url, typeName) {
+function fetchApi(url, category) {
   fetch(url)
   .then(function(res) {
     return res.json()
@@ -37,7 +39,7 @@ function fetchApi(url, typeName) {
     mainContent.removeChild(document.querySelector('.loader-wrap'))
     if(pagingNew > 0) {
       stopLoading = false
-      pagingUrl = `${urlRoot}/${typeName}?paging=${pagingNew}`
+      pagingUrl = `${urlRoot}/${category}?paging=${pagingNew}`
       window.addEventListener('scroll',loadNew)
     } else {
       pagingUrl = null
@@ -54,7 +56,7 @@ function loadNew(){
     return
   } else if(footTotop < windowHeight) {
     loader()
-    fetchApi(pagingUrl, typeName)
+    fetchApi(pagingUrl, category)
     stopLoading = true //跳出
   }
 }
@@ -179,7 +181,7 @@ function search(e) {
   init()
   let searchUrl = `${urlRoot}/search?keyword=${keyWord}`
   loader()
-  fetchApi(searchUrl, typeName)
+  fetchApi(searchUrl, category)
   searchInput.forEach(el => {
     el.value = ''
   })
