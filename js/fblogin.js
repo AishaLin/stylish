@@ -74,6 +74,7 @@ function signupAPI(obj,res) {
         method: 'Post',
         headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${fbAccessToken}`
         },
         body: JSON.stringify(obj)
     })

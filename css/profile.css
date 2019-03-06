@@ -8,13 +8,12 @@ hr {
 }
 .opt_Information {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 .consumer_photo_frame {
     max-width: 200px;
     max-height: 200px;
-    width: 100px;
-    height: 100px;
     background: #b4aeae;
     margin-right: 20px;
     position: relative;
@@ -32,9 +31,21 @@ hr {
     margin: auto;
 }
 .consumerInformation {
-    margin-top: 0;
+    margin-top: 20px;
 }
 .Ordering_Inf_div {
     display: flex;
     margin: 10px 0 0 0;
+}
+
+@media (min-width: 501px) {
+    main {
+        margin-top: 50px;
+        width: 80%;
+    }
+    .consumerInformation {
+        margin-top: 0;
+    }
+    .opt_Information {
+        flex-direction: row;    
 }
