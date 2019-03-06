@@ -91,11 +91,9 @@ function signupAPI(obj,res) {
             console.log(profileDataArray)
             let profileInfData = JSON.parse(localStorage.getItem('profileInf'))
             console.log(profileInfData)
-            if(profileInfData !== null) {
-                profileInfData.push(profileDataArray)
-                localStorage.setItem('profileInf', JSON.stringify(profileInfData))
-                console.log('99')
-            }
+            profileInfData.push(profileDataArray)
+            localStorage.setItem('profileInf', JSON.stringify(profileInfData))
+            console.log('99')
         } else {
             console.log(json)
             alert('查無會員資訊。');

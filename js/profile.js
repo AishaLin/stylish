@@ -6,9 +6,10 @@ const profile_email = document.querySelector('.profile_email')
 const profile_Content = document.querySelector('.profile_Content')
 //假如資料庫內的陣列有內容存在，執行以下的程式碼
 if (profile_arrayJason) {
-    consumer_photo.setAttribute('src', `${profile_arrayJason[0].picture}`)
-    profile_consumerName.textContent = profile_arrayJason[0].name
-    profile_email.textContent = profile_arrayJason[0].email
+    let numberOfMembers = profile_arrayJason.length
+    consumer_photo.setAttribute('src', `${profile_arrayJason[numberOfMembers-1].picture}`)
+    profile_consumerName.textContent = profile_arrayJason[numberOfMembers-1].name
+    profile_email.textContent = profile_arrayJason[numberOfMembers-1].email
 } else {
     profile_Content.innerHTML = '';
     profile_Content.innerHTML = '查無會員資料';
