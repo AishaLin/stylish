@@ -47,5 +47,6 @@ hr {
         margin-top: 0;
     }
     .opt_Information {
-        flex-direction: row;    
+        flex-direction: row; 
+    }   
 }
