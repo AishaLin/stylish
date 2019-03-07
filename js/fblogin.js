@@ -2,9 +2,9 @@ const logInBtn = document.querySelector('.logInBtn')
 const mobile_member_icon = document.querySelector('.mobile_member_icon')
 const member_Information = document.querySelector('.member_Information')
 
-let fbAccessToken =''
+let fbAccessToken ='';
 
-!==
+
 
 logInBtn.addEventListener('click', fb_Login)
 mobile_member_icon.addEventListener('click', fb_Login)
