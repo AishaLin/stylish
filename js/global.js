@@ -15,7 +15,7 @@ console.log('00')
 
 
 
-if(location.pathname === "/stylish/index.html"||location.pathname === "/stylish") {
+if(location.pathname === "/stylish/index.html"||location.pathname === "/stylish/"||location.pathname === "/index.html") {
   if(urlCategory === undefined || urlCategory === "all") {
     showhomePage()
   } else {
