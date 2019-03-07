@@ -4,7 +4,7 @@ Banner
 .banner {
   width: auto;
   height: 235px;
-  background-color: #bdb6b0;
+  /* background-color: #bdb6b0; */
 }
 #imgWrap {
   background-color: #fff;

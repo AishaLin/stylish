@@ -1,7 +1,8 @@
 //連接api相關物件
 let urlRoot = 'https://api.appworks-school.tw/api/1.0/products'
-let category = 'all'
+let urlCategory = location.search.split('=')[1]
 let mainContent = document.querySelector('main')
+let category = 'all'
 let pagingUrl = null
 let pagingNew = null
 let stopLoading = true
@@ -10,14 +11,39 @@ let data = []
 showCounter()
 localStorageStatus()
 
-//依產品類別渲染資訊
+console.log('00')
+
+
+
+if(location.pathname === "/index.html") {
+  if(urlCategory === undefined || urlCategory === "all") {
+    showhomePage()
+  } else {
+    category = location.search.split('=')[1]
+    // mainContent.innerHTML = ''
+    let url = `${urlRoot}/${category}`
+    loader()
+    fetchApi(url, category)
+  }
+}
+
+
+function showhomePage() {
+  mainContent.innerHTML = ''
+  let url = `${urlRoot}/${category}`
+  loader()
+  fetchApi(url, category)
+}
+
+
+// 依產品類別渲染資訊
 let productType = document.querySelectorAll('.productType')
 productType.forEach(el=> {
   el.addEventListener('click', getTypeData)
 })
 function getTypeData(el) {
   // let typeName = el.target.dataset.linkname //自定義data-*屬性的標的物件
-  category = window.location.search.split('=')[1]
+  category = location.search.split('=')[1]
   console.log(category)
   let url = `${urlRoot}/${category}`
   console.log(url)
@@ -25,6 +51,7 @@ function getTypeData(el) {
   loader()
   fetchApi(url, category)  
 }
+
 
 //連接api
 function fetchApi(url, category) {
@@ -36,6 +63,9 @@ function fetchApi(url, category) {
     data = json.data
     pagingNew = json.paging
     data.length === 0 ? showNone(data) : render(data)
+    console.log('77')
+    console.log(category)
+    console.log(url)
     mainContent.removeChild(document.querySelector('.loader-wrap'))
     if(pagingNew > 0) {
       stopLoading = false

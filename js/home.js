@@ -1,11 +1,11 @@
 //直接顯示首頁（all)
-function homePage() {
-  mainContent.innerHTML = ''
-  let url = `${urlRoot}/${category}`
-  loader()
-  fetchApi(url, category)
-}
-homePage()
+// function homePage() {
+//   mainContent.innerHTML = ''
+//   let url = `${urlRoot}/${category}`
+//   loader()
+//   fetchApi(url, category)
+// }
+// homePage()
 
 //Banner 區域的動畫
 //全域物件
@@ -37,7 +37,7 @@ function renderImg(id) {
   subTextWrap.innerHTML = ''
   //banner 圖片
   heroImg.style.backgroundImage = 
-  `linear-gradient(90deg,white,transparent 60%), 
+  `linear-gradient(90deg,rgba(255,255,255,0),transparent 60%), 
   url('https://api.appworks-school.tw${TopData[id].picture}')` 
   //banner 處理文字陣列
   const textArray = TopData[id].story.split(/[\n,]/g)

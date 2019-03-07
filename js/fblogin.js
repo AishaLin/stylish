@@ -4,6 +4,7 @@ const member_Information = document.querySelector('.member_Information')
 
 let fbAccessToken =''
 
+!==
 
 logInBtn.addEventListener('click', fb_Login)
 mobile_member_icon.addEventListener('click', fb_Login)
@@ -17,6 +18,12 @@ mobile_member_icon.addEventListener('click', fb_Login)
 //     };
 //     return consumer_Information;
 // }
+
+function fb_Login(response) {
+    FB.login(function(response) {
+        checkLoginState(response);
+    },{ scope: 'email,public_profile'})
+}
 
 // 檢查當前的登入狀態
 function checkLoginState() {
@@ -39,7 +46,11 @@ function statusChangeCallback(response) {
           }
         console.log(fbAccessToken)
         signupAPI(user, response)
-
+        
+        // 若是手機版，點擊登入後直接進入會員資料頁面
+        if(mobile_member_icon) {
+            window.location.pathname = `profile.html`
+        }
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
@@ -54,12 +65,6 @@ function statusChangeCallback(response) {
         beforeLogInEventHandler(response)
     }
     
-}
-
-function fb_Login(response) {
-    FB.login(function(response) {
-        checkLoginState(response);
-    },{ scope: 'email,public_profile'})
 }
 
 
