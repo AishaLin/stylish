@@ -48,10 +48,10 @@ function statusChangeCallback(response) {
         signupAPI(user, response)
         
         // 若是手機版，點擊登入後直接進入會員資料頁面
-        let footbars = document.querySelector('.footbars')
-        if(footbars) {
-            window.location.pathname = `stylish/profile.html`
-        }
+        // let footbars = document.querySelector('.footbars')
+        // if(footbars) {
+        //     window.location.pathname = `stylish/profile.html`
+        // }
         // 取得資料
         // FB.api('/me','GET',{
         // 	"fields" : "userID,name,gender,email"
