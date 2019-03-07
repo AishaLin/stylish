@@ -120,5 +120,3 @@ function showOrHide(title) {
         hide = true;
     }
 }
-
-
