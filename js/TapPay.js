@@ -270,7 +270,7 @@ function orderCheckOutAPI(obj) {
             console.log(orderConfirmed)
             orderConfirmed.push(orderNum)
             localStorage.setItem('order', JSON.stringify(orderConfirmed))
-            window.location.pathname = `thankyou.html`
+            window.location.pathname = `stylish/thankyou.html`
             console.log(orderNumber)
         } else {
             console.log(json)
