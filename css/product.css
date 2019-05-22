@@ -39,7 +39,41 @@ main {
     right: 0;
     margin: auto;
 }
-
+/* 放大鏡 */
+#frame_product_MainImg {
+	position: relative;
+}
+#small {
+	display: none;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+	opacity: 0.6;
+	border-radius: 50px;
+}
+#big {
+	width: 300px;
+	height: 300px;
+	border-radius: 175px;
+	overflow: hidden;
+	position: relative;
+	filter: gray;
+}
+#big img {
+	width: 900px;
+	height: 1200px;  
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#magnifyingGlass {
+	position: absolute;
+	display: none;
+	z-index: 2000;
+}
 /*名稱、價格*/
 hgroup h1 {
     font-family: NotoSansCJKtc-Regular;
@@ -316,7 +350,12 @@ Media Queries
     }
 }
 
+
 @media (min-width: 801px) {
+    #big {
+		width: 350px;
+		height: 350px;
+	}
     main {
         width: 75%;
     }
