@@ -336,7 +336,7 @@ function magnifying(e) {
         document.querySelector('#imgs').style.top = `${-magnifyingTop + 100}px`;
         document.querySelector('#imgs').style.left = `${-magnifyingLeft + 100}px`;
         //放大鏡位置，隨滑鼠移動上下左右
-        if(top < 200){
+        if (top < 200) {
             document.querySelector('#magnifyingGlass').style.top = `${top + 210}px`;
         } else {
             document.querySelector('#magnifyingGlass').style.top = `${top - 110}px`;
@@ -357,7 +357,7 @@ function magnifying(e) {
             document.querySelector('#imgs').style.left = 0
         } else { document.querySelector('#imgs').style.left = `${-magnifyingLeft + 175}px` };
         //放大鏡位置，只移動上下
-        document.querySelector('#magnifyingGlass').style.top = top * (0.6) + "px";
+        document.querySelector('#magnifyingGlass').style.top = (top + 30) + "px";
         document.querySelector('#magnifyingGlass').style.left = "58%";
     }
 }
