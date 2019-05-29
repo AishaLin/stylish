@@ -34,7 +34,7 @@ function renderCartList(arrayJason) {
         removeBtn.className = 'cart-remove'
         let cartRemoveImg = document.createElement('img')
         cartRemoveImg.className = 'cartRemoveImg'
-        cartRemoveImg.setAttribute('src', "../img/cart-remove.png")
+        cartRemoveImg.setAttribute('src', "./img/cart-remove.png")
 
         //橫線
         let partition = document.createElement('hr')
